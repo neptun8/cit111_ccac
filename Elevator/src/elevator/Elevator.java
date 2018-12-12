@@ -9,15 +9,13 @@ import java.util.Scanner;
 
 /**
  *
- * @author Sherzod
+ * @author Sherzod Kulnazarov
  */
 public class Elevator {
 
     //memeber variables
-    
-    public int currentFloor=0;
-    
-    
+    public int currentFloor = 0;
+
     //methods
     public void selectFloor() {
         //new scanner object
@@ -30,34 +28,35 @@ public class Elevator {
         //if its true prints "Invalid Selection"
         if (newFloor > 100 || newFloor < 0 || newFloor == 13) {
             System.out.println("Invalid selection");
-        }
-           //otherwise
+        } //close if
+        //otherwise
         else if (newFloor <= 100 && newFloor > 0 && newFloor != 13) {
             //increments to selected floor
-            for (int i = 1; i <= newFloor; i++)
-                //prints increments 
+            for (int i = 1; i <= newFloor; i++) //prints increments 
+            {
                 System.out.println("..." + i);
-                //prints when it reaches selected floor
-                System.out.println("Ding!");
-                //calls method back to basement
-                
-                backToBasement(newFloor);
-        }
-    }
+            }
+            //prints when it reaches selected floor
+            System.out.println("Ding!");
+            //calls method back to basement
+
+            backToBasement(newFloor);
+        }//close else if
+    }//close selectFloor method
     //method for fire alarm
+
     public void fireAlarm() {
         System.out.println("Danger, you must exit the building now!");
-    }
+    }//close fireAlarm
+
     //mehtod back to basement
-    public void backToBasement(int newFloor){
+    public void backToBasement(int newFloor) {
         //accepts input from selectFloor and 
         //reduces untill reaches basement floor
-        for (int i=newFloor; i>0;i--){
-             System.out.println("..." + i);
+        for (int i = newFloor; i > 0; i--) {
+            System.out.println("..." + i);
         }
         //prints when elevator is at the basement level..
         System.out.println("Ding!... Back to Ground Level");
-
-    }
-    
-}
+    }//close method backtobasement
+}//close class
